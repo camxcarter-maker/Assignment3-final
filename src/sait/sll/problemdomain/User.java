@@ -21,6 +21,22 @@ public class User implements Serializable {
         return this.id;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+    
     public String getName() {
         return this.name;
     }
@@ -41,13 +57,12 @@ public class User implements Serializable {
 
     @Override
     public boolean equals(Object obj) {
-        if (!(obj instanceof User)) {
-            return false;
-        }
-
+        if (this == obj) return true;
+        if (!(obj instanceof User)) return false;
         User other = (User) obj;
-        return this.id == other.id
-                && this.name.equals(other.name)
-                && this.email.equals(other.email);
+        boolean namesEqual = (this.name == null) ? (other.name == null) : this.name.equals(other.name);
+        boolean emailsEqual = (this.email == null) ? (other.email == null) : this.email.equals(other.email);
+        
+        return this.id == other.id && namesEqual && emailsEqual;
     }
 }
