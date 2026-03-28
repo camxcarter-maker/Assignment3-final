@@ -154,4 +154,25 @@ public class SLL implements LinkedListADT, Serializable {
     public boolean contains(Object data) {
         return indexOf(data) != -1;
     }
+   
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (!(obj instanceof SLL)) return false;
+        
+        SLL other = (SLL) obj;
+        if (this.size != other.size) return false;
+
+        Node currentThis = this.head;
+        Node currentOther = other.head;
+
+        while (currentThis != null) {
+            if (!currentThis.getData().equals(currentOther.getData())) {
+                return false;
+            }
+            currentThis = currentThis.getNext();
+            currentOther = currentOther.getNext();
+        }
+        return true;
+    }
 }
