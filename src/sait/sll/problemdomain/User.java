@@ -2,6 +2,15 @@ package sait.sll.problemdomain;
 
 import java.io.Serializable;
 
+/**
+ * Name: Alex Akere
+ * Date: March 30, 2026
+ * Description: Represents a user entity in the problem domain. 
+ * This class implements Serializable to allow user objects to be stored in binary format.
+ * It features a transient password field for security during serialization and 
+ * overrides the equals method to allow for accurate comparison between user objects.
+ */
+
 public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
