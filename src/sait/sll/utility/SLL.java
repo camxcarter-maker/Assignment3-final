@@ -2,6 +2,15 @@ package sait.sll.utility;
 
 import java.io.Serializable;
 
+/**
+ * Name: Alex Akere, Cam Carter
+ * Date: March 30, 2026
+ * Description: The core implementation of the Singly Linked List data structure. 
+ * This class manages the head reference and list size while implementing all 
+ * functional requirements of the LinkedListADT. It includes custom logic for 
+ * comparisons to support robust serialization testing.
+ */
+
 public class SLL implements LinkedListADT, Serializable {
 
 	private static final long serialVersionUID = 1L;
